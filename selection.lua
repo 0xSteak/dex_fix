@@ -669,3 +669,11 @@ TotallyNotSelectionChanged.Event:Connect(function()
 		clearHighlight()
 	end
 end)
+
+local Mouse = Player:GetMouse()
+Mouse.Button1Down:Connect(function()
+	local Target = Mouse.Target
+	if Settings.ClickSelect and Target then
+		TotallyNotSetSelection:Fire(Target)
+	end
+end)
